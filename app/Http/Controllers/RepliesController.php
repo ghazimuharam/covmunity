@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use App\User;
 use App\Thread;
 use App\Replies;
+use App\Notifications\ThreadReply;
 
 class RepliesController extends Controller
 {
@@ -37,12 +38,25 @@ class RepliesController extends Controller
             'replies' => 'required|min:9',
         ]);
 
-        $user = Auth::user();
+        $user = User::find(Auth::user()->id);
         $replies = Replies::create([
                                 'reply' => $request->replies,
                                 'user_id' => $user->id,
                                 'thread_id' => $request->id
                             ]);
+
+        $lastRepId = $user->replies()->orderBy('created_at', 'desc')->first()->id;
+        $NotifiedUser = Thread::find($request->id)->user->id;
+
+        $notif = [
+            'thread_id' => $request->id,
+            'replies_id' => $lastRepId
+        ];
+
+        if($NotifiedUser != $user->id){
+            User::find($NotifiedUser)->notify(new ThreadReply($notif));
+        }
+
         if($replies->save()){
             return redirect(route('thread',$request->id))->with('success','Reply successfully posted!');
         }else{

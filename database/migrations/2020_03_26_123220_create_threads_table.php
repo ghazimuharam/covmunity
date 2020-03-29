@@ -19,7 +19,7 @@ class CreateThreadsTable extends Migration
             $table->text('thread');
             $table->integer('views');
             $table->enum('type', ['thread', 'static']);
-            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('user_id')->onDelete('cascade');
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users');
         });

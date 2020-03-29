@@ -22,20 +22,20 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        $user = Auth::user();
+        $user = User::find(Auth::user()->id);
         return view('panel.dashboard', ['user' => $user]);
     }
 
     public function forum()
     {
-        $user = Auth::user();
+        $user = User::find(Auth::user()->id);
         $thread = Thread::where('type','=','thread')->get();
         return view('panel.forum', ['user' => $user, 'allThreads' => $thread]);
     }
 
     public function basic()
     {
-        $user = Auth::user();
+        $user = User::find(Auth::user()->id);
         $thread = Thread::where('type','=','static')->get();
         return view('panel.basic', ['user' => $user, 'allThreads' => $thread]);
     }

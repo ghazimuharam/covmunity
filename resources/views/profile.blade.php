@@ -45,8 +45,8 @@
                             <div class="col">
                                 <div class="card-profile-stats d-flex justify-content-center">
                                     <div>
-                                        <span class="heading">22</span>
-                                        <span class="description">Friends</span>
+                                        <span class="heading">{{ count($user->notifications) }}</span>
+                                        <span class="description">Notifications</span>
                                     </div>
                                     <div>
                                         <span class="heading">{{ count($user->threads) }}</span>

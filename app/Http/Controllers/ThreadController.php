@@ -22,7 +22,7 @@ class ThreadController extends Controller
      */
     public function index(Request $request)
     {
-        $user = Auth::user();
+        $user = User::find(Auth::user()->id);
         $thread = Thread::findorfail($request->id);
         if($thread->user->id != $user->id){
             $thread->increment('views');
@@ -53,7 +53,7 @@ class ThreadController extends Controller
             'thread' => 'required|min:25',
         ]);
 
-        $user = Auth::user();
+        $user = User::find(Auth::user()->id);
         $thread = Thread::create([
                                 'subject' => $request->subject,
                                 'thread' => $request->thread,
@@ -76,7 +76,7 @@ class ThreadController extends Controller
      */
     public function show(Thread $thread)
     {
-        $user = Auth::user();
+        $user = User::find(Auth::user()->id);
         return view('panel.addthread', ['user' => $user]);
     }
 
@@ -88,7 +88,7 @@ class ThreadController extends Controller
      */
     public function edit(Request $request)
     {
-        $user = Auth::user();
+        $user = User::find(Auth::user()->id);
         $thread = Thread::findorfail($request->id);
         if(($user->id == $thread->user->id)){
             return view('panel.editthread',['user' => $user, 'thread' => $thread, 'type' => 'Thread']);
@@ -110,7 +110,7 @@ class ThreadController extends Controller
             'thread' => 'required|min:25',
         ]);
 
-        $user = Auth::user();
+        $user = User::find(Auth::user()->id);
         $thread = Thread::findorfail($request->id);
 
         if($user->id == $thread->user->id){
@@ -134,7 +134,7 @@ class ThreadController extends Controller
      */
     public function destroy(Request $request)
     {
-        $user = Auth::user();
+        $user = User::find(Auth::user()->id);
         $thread = Thread::findorfail($request->id);
 
         if($user->id == $thread->user->id){
