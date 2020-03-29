@@ -24,12 +24,12 @@
         <div class="row">
             <div class="col-xl-4 order-xl-2">
                 <div class="card card-profile">
-                    <img src="../../assets/img/theme/img-1-1000x600.jpg" alt="Image placeholder" class="card-img-top">
+                    <img src="{{ asset('assets/img/theme/img-1-1000x600.jpg') }}" alt="Image placeholder" class="card-img-top">
                     <div class="row justify-content-center">
                         <div class="col-lg-3 order-lg-2">
                             <div class="card-profile-image">
                                 <a href="#">
-                                    <img src="../../assets/img/theme/team-4.jpg" class="rounded-circle">
+                                    <img src="{{ asset('assets/images/logo.png') }}" class="rounded-circle">
                                 </a>
                             </div>
                         </div>

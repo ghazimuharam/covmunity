@@ -1,10 +1,10 @@
 <!-- Sidenav -->
-<nav class="sidenav navbar navbar-vertical  fixed-left  navbar-expand-xs navbar-light bg-white" id="sidenav-main">
+<nav class="sidenav navbar navbar-vertical  fixed-left  navbar-expand-xs navbar-light bg-default" id="sidenav-main">
     <div class="scrollbar-inner">
       <!-- Brand -->
       <div class="sidenav-header  align-items-center">
-        <a class="navbar-brand" href="javascript:void(0)">
-          <img src="{{ asset('assets/img/brand/blue.png') }}" class="navbar-brand-img" alt="...">
+        <a class="navbar-brand text-white" href="javascript:void(0)">
+          <img src="{{ asset('assets/images/logo.png') }}" class="navbar-brand-img" alt="..."> Covmunity
         </a>
       </div>
       <div class="navbar-inner">
@@ -13,21 +13,21 @@
           <!-- Nav items -->
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link" href="{{ route('dashboard') }}">
+              <a class="nav-link text-white" href="{{ route('dashboard') }}">
                 <i class="ni ni-tv-2 text-primary"></i>
                 <span class="nav-link-text">Dashboard</span>
               </a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('basic') }}">
+                <a class="nav-link text-white" href="{{ route('basic') }}">
                     <i class="ni ni-single-copy-04 text-primary"></i>
                     <span class="nav-link-text">Basic</span>
                 </a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('forum') }}">
+                <a class="nav-link text-white" href="{{ route('forum') }}">
                   <i class="ni ni-archive-2 text-primary"></i>
                   <span class="nav-link-text">Forum</span>
                 </a>
