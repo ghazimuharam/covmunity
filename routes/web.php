@@ -33,6 +33,9 @@ Route::get('/api/summary', 'ApiController@showSummary');
 Route::get('/web/dashboard', 'DashboardController@index')->name('dashboard');
 Route::get('/web/basic/', 'DashboardController@basic')->name('basic');
 Route::get('/web/forum', 'DashboardController@forum')->name('forum');
+Route::get('/web/profile', 'DashboardController@profile')->name('profile');
+
+Route::post('/web/profile', 'DashboardController@submitprofile')->name('submitProfile');
 
 Route::get('/web/forum/thread/add', 'ThreadController@show')->name('addthread');
 Route::post('/web/forum/thread/add', 'ThreadController@store')->name('addthread');

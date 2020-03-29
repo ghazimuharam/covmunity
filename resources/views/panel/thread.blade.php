@@ -45,7 +45,7 @@
                         <div class="row">
                             <div class="col">
                                 <h3 class="h1 text-white mb-0">{{ $thread->subject }}</h3>
-                                <h6 class="text-light text-capitalize ls-1 mb-1">Posted by {{ $thread->user->name }} on {{ $thread->created_at }}</h6>
+                                <h6 class="text-light text-capitalize ls-1 mb-1">Posted by {{ $thread->user->name }} {{ $thread->created_at->diffForHumans() }}</h6>
                             </div>
                             @if ($user->id == $thread->user->id)
                                 <div class="col">
@@ -128,7 +128,7 @@
                                                         <div class="row">
                                                             {!! html_entity_decode($rep->reply) !!}
                                                         </div>
-                                                        <div class="d-flex justify-content-end">{{ $rep->created_at }}</div>
+                                                        <div class="d-flex justify-content-end">{{ $rep->created_at->diffForHumans() }}</div>
                                                     </div>
                                                 </div>
                                             </div>

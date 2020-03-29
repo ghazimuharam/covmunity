@@ -19,13 +19,18 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\Replies');
     }
+
+    public function country()
+    {
+        return $this->hasOne('App\Country', 'id','country_id');
+    }
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'country_id'
     ];
 
     /**

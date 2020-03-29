@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use App\User;
 use App\Thread;
 use App\Replies;
+use App\Country;
 class DashboardController extends Controller
 {
     public function __construct()
@@ -39,4 +40,36 @@ class DashboardController extends Controller
         return view('panel.basic', ['user' => $user, 'allThreads' => $thread]);
     }
 
+    public function profile()
+    {
+        $user = User::find(Auth::user()->id);
+        $country = Country::get();
+        return view('profile', ['user' => $user, 'countries' => $country]);
+    }
+
+    public function submitprofile(Request $request)
+    {
+
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required',
+            'country' => 'required'
+        ]);
+
+        $auth = Auth::user();
+        $user = User::findorfail($auth->id);
+
+        $update = $user->update([
+            'name' => $request->name,
+            'email' => $request->email,
+            'country_id' => $request->country
+        ]);
+
+        if($update){
+            return redirect(route('profile'))->with('success','Information edited successfully!');
+        }
+
+        return back()->with('danger','edit failed!');
+
+    }
 }

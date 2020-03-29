@@ -60,7 +60,7 @@
                                 <span>{{Str::limit(strip_tags($thread->thread),30,' (...)')}}</span>
                             </td>
                             <td>
-                                <h3 class="text-white">{{ $thread->updated_at }}</h3>
+                                <h3 class="text-white">{{ $thread->updated_at->diffForHumans() }}</h3>
                             </td>
                             <td>
                                 <h3 class="text-white text-capitalize">{{ $thread->user->name }}</h3>

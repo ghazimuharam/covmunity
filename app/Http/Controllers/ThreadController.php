@@ -121,7 +121,7 @@ class ThreadController extends Controller
             if($update){
                 return redirect(route('thread',$thread->id))->with('success','Thread edited successfully!');
             }else{
-                return back()->with('danger','edit failed!');;
+                return back()->with('danger','edit failed!');
             }
         }
     }
