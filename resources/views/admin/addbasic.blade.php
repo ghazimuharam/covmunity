@@ -1,6 +1,6 @@
 @extends('layout.main')
 
-@section('title','Covmunity - Add Thread')
+@section('title','Covmunity - Add Basic')
 
 @section('body')
 <link rel="stylesheet" type="text/css" href="{{ asset('ckeditor/styles.css') }}">
@@ -32,8 +32,8 @@
                 <div class="card-header bg-transparent">
                     <div class="row mx-1">
                         <div class="col">
-                            <h6 class="text-light text-uppercase ls-1 mb-1">Welcome to Covmunity Forum</h6>
-                            <h3 class="h1 text-white mb-0">Add new {{ $type }}</h3>
+                            <h6 class="text-light text-uppercase ls-1 mb-1">Welcome to Covmunity Basic</h6>
+                            <h3 class="h1 text-white mb-0">Add new basic</h3>
                         </div>
                     </div>
                     <div class="row mx-1 mt-1">
@@ -52,7 +52,7 @@
 
                 <div class="card-body">
 
-                    <form action="{{ route('addthread') }}" method="post">
+                    <form action="{{ route('addbasics') }}" method="post">
                         @csrf
                         <div class="row mx-1">
                             <div class="col-xl-6 col-md-8 col-xs-2">

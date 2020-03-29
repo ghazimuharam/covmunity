@@ -143,6 +143,12 @@
                   <i class="ni ni-single-02"></i>
                   <span>My profile</span>
                 </a>
+                @if ($user->role->id == 1)
+                <a href="{{ route('adminhome') }}" class="dropdown-item">
+                    <i class="ni ni-settings"></i>
+                    <span>Admin Panel</span>
+                </a>
+                @endif
                 <div class="dropdown-divider"></div>
                 <a href="/logout" class="dropdown-item">
                   <i class="ni ni-user-run"></i>

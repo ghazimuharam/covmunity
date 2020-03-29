@@ -77,7 +77,7 @@ class ThreadController extends Controller
     public function show(Thread $thread)
     {
         $user = User::find(Auth::user()->id);
-        return view('panel.addthread', ['user' => $user]);
+        return view('panel.addthread', ['user' => $user, 'type' => 'Thread']);
     }
 
     /**

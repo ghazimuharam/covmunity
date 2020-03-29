@@ -614,7 +614,7 @@ var NavbarCollapse = (function() {
 				 $('body').removeClass('nav-open');
 					navbar_menu_visible = 0;
 					$('.bodyClick').remove();
-					
+
 			 });
 
 		 $('body').addClass('nav-open');
@@ -916,7 +916,7 @@ var SalesChart = (function() {
         }
       },
       data: {
-        labels: ['May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+        labels: ['Jan', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
         datasets: [{
           label: 'Performance',
           data: [0, 20, 10, 30, 15, 40, 20, 60, 60]

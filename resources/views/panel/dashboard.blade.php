@@ -118,23 +118,7 @@
               <div class="row align-items-center">
                 <div class="col">
                   <h6 class="text-light text-uppercase ls-1 mb-1">Overview</h6>
-                  <h5 class="h3 text-white mb-0">Sales value</h5>
-                </div>
-                <div class="col">
-                  <ul class="nav nav-pills justify-content-end">
-                    <li class="nav-item mr-2 mr-md-0" data-toggle="chart" data-target="#chart-sales-dark" data-update='{"data":{"datasets":[{"data":[0, 20, 10, 30, 15, 40, 20, 60, 60]}]}}' data-prefix="$" data-suffix="k">
-                      <a href="#" class="nav-link py-2 px-3 active" data-toggle="tab">
-                        <span class="d-none d-md-block">Month</span>
-                        <span class="d-md-none">M</span>
-                      </a>
-                    </li>
-                    <li class="nav-item" data-toggle="chart" data-target="#chart-sales-dark" data-update='{"data":{"datasets":[{"data":[0, 20, 5, 25, 10, 30, 15, 40, 40]}]}}' data-prefix="$" data-suffix="k">
-                      <a href="#" class="nav-link py-2 px-3" data-toggle="tab">
-                        <span class="d-none d-md-block">Week</span>
-                        <span class="d-md-none">W</span>
-                      </a>
-                    </li>
-                  </ul>
+                  <h5 class="h3 text-white mb-0">Global Confirmed Case</h5>
                 </div>
               </div>
             </div>
@@ -152,20 +136,87 @@
             <div class="card-header bg-transparent">
               <div class="row align-items-center">
                 <div class="col">
-                  <h6 class="text-uppercase text-muted ls-1 mb-1">Performance</h6>
-                  <h5 class="h3 mb-0">Total orders</h5>
+                  <h5 class="h3 mb-0">Cov-#Tips</h5>
                 </div>
               </div>
             </div>
             <div class="card-body">
-              <!-- Chart -->
-              <div class="chart">
-                <canvas id="chart-bars" class="chart-canvas"></canvas>
-              </div>
+                <ul class="list-group list-group-flush" data-toggle="checklist">
+                    <li class="checklist-entry list-group-item flex-column align-items-start py-4 px-4">
+                        <div class="checklist-item checklist-item-primary">
+                          <div class="checklist-info">
+                          <h5 class="checklist-title mb-0">Wash your hands frequently</h5>
+                        </div>
+                        <div>
+                          <div class="custom-control custom-checkbox custom-checkbox-primary">
+                            <input class="custom-control-input" id="chk-todo-task-1" type="checkbox">
+                            <label class="custom-control-label" for="chk-todo-task-1"></label>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="checklist-entry list-group-item flex-column align-items-start py-4 px-4">
+                      <div class="checklist-item checklist-item-warning">
+                        <div class="checklist-info">
+                          <h5 class="checklist-title mb-0">Maintain physical distancing</h5>
+                        </div>
+                        <div>
+                          <div class="custom-control custom-checkbox custom-checkbox-warning">
+                            <input class="custom-control-input" id="chk-todo-task-2" type="checkbox">
+                            <label class="custom-control-label" for="chk-todo-task-2"></label>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="checklist-entry list-group-item flex-column align-items-start py-4 px-4">
+                      <div class="checklist-item checklist-item-success">
+                        <div class="checklist-info">
+                          <h5 class="checklist-title mb-0">Eat healthy food</h5>
+                        </div>
+                        <div>
+                          <div class="custom-control custom-checkbox custom-checkbox-success">
+                            <input class="custom-control-input" id="chk-todo-task-3" type="checkbox">
+                            <label class="custom-control-label" for="chk-todo-task-3"></label>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="checklist-entry list-group-item flex-column align-items-start py-4 px-4">
+                        <div class="checklist-item checklist-item-info checklist-item">
+                          <div class="checklist-info">
+                            <h5 class="checklist-title mb-0">Stay hydrated</h5>
+                          </div>
+                          <div>
+                            <div class="custom-control custom-checkbox custom-checkbox-info">
+                              <input class="custom-control-input" id="chk-todo-task-4" type="checkbox">
+                              <label class="custom-control-label" for="chk-todo-task-4"></label>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                    <li class="checklist-entry list-group-item flex-column align-items-start py-4 px-4">
+                      <div class="checklist-item checklist-item-dark checklist-item">
+                        <div class="checklist-info">
+                          <h5 class="checklist-title mb-0">Stay informed and follow advice given by your healthcare provider</h5>
+                        </div>
+                        <div>
+                          <div class="custom-control custom-checkbox custom-checkbox-dark">
+                            <input class="custom-control-input" id="chk-todo-task-4" type="checkbox">
+                            <label class="custom-control-label" for="chk-todo-task-4"></label>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
             </div>
           </div>
         </div>
       </div>
       @include('layout.footer')
+    <script>
+        var confirmed = @json($confirmed);
+        var date = @json($date);
+    </script>
+
   <script src="{{ asset('fetchData.js') }}"></script>
 @endsection

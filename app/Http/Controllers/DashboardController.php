@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
 use App\User;
 use App\Thread;
 use App\Replies;
@@ -23,7 +24,11 @@ class DashboardController extends Controller
     public function index()
     {
         $user = User::find(Auth::user()->id);
-        return view('panel.dashboard', ['user' => $user]);
+        $json = json_decode(file_get_contents('https://ghzmhrm.dev/coronaTime.php'), true);
+        $confirmed = $json['confirmed'];
+        $date = $json['date'];
+
+        return view('panel.dashboard', ['user' => $user, 'confirmed' => $confirmed, 'date' => $date]);
     }
 
     public function forum()

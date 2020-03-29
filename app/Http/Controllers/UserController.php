@@ -80,6 +80,7 @@ class UserController extends Controller
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
+            'roles_id' => 2,
             'password' => Hash::make($request->password),
             'checkbox' => 'accepted',
         ]);

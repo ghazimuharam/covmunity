@@ -1,27 +1,27 @@
 @extends('layout.main')
 
-@section('title','Covmunity - Basic')
+@section('title','Covmunity - Admin Forum')
 
 @section('body')
 <body>
   @include('layout.header')
-            <div class="header bg-primary pb-6">
-                <div class="container-fluid">
-                <div class="header-body">
-                    <div class="row align-items-center py-4">
-                    <div class="col-lg-6 col-7">
-                        <nav aria-label="breadcrumb" class="d-none d-md-inline-block md-4">
-                        <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
-                            <li class="breadcrumb-item"><a href="{{ route('dashboard') }}"><i class="fas fa-home"></i></a></li>
-                            <li class="breadcrumb-item"><a href="{{ route('basic') }}">Basic</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Default</li>
-                        </ol>
-                        </nav>
-                    </div>
-                    </div>
-                </div>
-                </div>
+    <div class="header bg-primary pb-6">
+        <div class="container-fluid">
+        <div class="header-body">
+            <div class="row align-items-center py-4">
+            <div class="col-lg-6 col-7">
+                <nav aria-label="breadcrumb" class="d-none d-md-inline-block md-4">
+                <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
+                    <li class="breadcrumb-item"><a href="{{ route('dashboard') }}"><i class="fas fa-home"></i></a></li>
+                    <li class="breadcrumb-item"><a href="{{ route('basicsManagement') }}">Basics</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Default</li>
+                </ol>
+                </nav>
             </div>
+            </div>
+        </div>
+        </div>
+    </div>
 
     <!-- Page content -->
     <div class="container-fluid mt--6">
@@ -33,8 +33,17 @@
               <div class="card-header bg-transparent">
                 <div class="row align-items-center">
                     <div class="col">
-                        <h6 class="text-light text-uppercase ls-1 mb-1">Welcome to Covmunity Basic</h6>
-                        <h3 class="h1 text-white mb-0">Basic</h3>
+                        <h6 class="text-light text-uppercase ls-1 mb-1">Welcome to Covmunity Basics</h6>
+                        <h3 class="h1 text-white mb-0">General</h3>
+                    </div>
+                    <div class="col">
+                        <ul class="nav nav-pills justify-content-end">
+                            <li class="nav-item mr-2 mr-md-2">
+                                <a href="{{ route('addbasics') }}" class="nav-link py-2 px-3 active">
+                                    <span class="d-block">Add Basic</span>
+                                </a>
+                            </li>
+                        </ul>
                     </div>
               </div>
                 @if (session('success'))
@@ -50,13 +59,14 @@
                       <th>Last update</th>
                       <th>Starter</th>
                       <th>Views</th>
+                      <th>Reply</th>
                     </tr>
                   </thead>
                   <tbody>
                     @foreach ($allThreads as $thread)
                         <tr>
                             <td class="col-6">
-                                <a href="{{ route('viewbasic',$thread->id) }}"><h1 class="text-white">{{ $thread->subject }}</h1></a>
+                                <a href="{{ route('thread',$thread->id) }}"><h1 class="text-white">{{ $thread->subject }}</h1></a>
                                 <span>{{Str::limit(strip_tags($thread->thread),30,' (...)')}}</span>
                             </td>
                             <td>
@@ -67,6 +77,9 @@
                             </td>
                             <td>
                                 <h3 class="text-white">{{ $thread->views }}</h3>
+                            </td>
+                            <td>
+                                <h3 class="text-white">{{ count($thread->replies) }}</h3>
                             </td>
                         </tr>
                     @endforeach

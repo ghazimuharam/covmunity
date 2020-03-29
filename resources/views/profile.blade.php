@@ -1,6 +1,6 @@
 @extends('layout.main')
 
-@section('title','Covmunity - Dashboard')
+@section('title','Covmunity - Profile')
 
 @section('body')
 <body>
@@ -158,7 +158,7 @@
                                             <label for="country">Country</label>
                                             <select class="form-control text-dark" id="country" name="country" value="none">
                                             @if (isset($user->country->long_name))
-                                            <option value="{{ $user->country_id }}" selected disabled hidden>{{ $user->country->long_name }}</option>
+                                            <option value="{{ $user->country_id }}">{{ $user->country->long_name }}</option>
                                             @else
                                             <option value="none" selected disabled hidden>Select an Option</option>
                                             @endif

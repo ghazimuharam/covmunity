@@ -7,6 +7,10 @@ use GuzzleHttp\Client;
 
 class ApiController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -32,6 +36,18 @@ class ApiController extends Controller
         }
 
         return json_encode($data);
+    }
+
+    public function bingAPI()
+    {
+        $json = json_decode(file_get_contents('https://ghzmhrm.dev/coronaTime.php'), true);
+        $date = [];
+        $confirmed = [];
+        foreach($json['world'] as $data){
+            array_push($confirmed, $data['confirmed']);
+            array_push($date, $data['date']);
+        }
+        return json_encode(array_merge(['confirmed' => $confirmed],['date' => $date]));
     }
 
     /**

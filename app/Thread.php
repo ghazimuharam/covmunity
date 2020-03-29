@@ -8,7 +8,7 @@ class Thread extends Model
 {
 
     protected $fillable = [
-        'subject', 'thread', 'views', 'user_id'
+        'subject', 'thread', 'views', 'user_id', 'type'
     ];
 
     public function user(){

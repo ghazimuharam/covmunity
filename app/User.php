@@ -27,13 +27,17 @@ class User extends Authenticatable
         return $this->hasOne('App\Country', 'id','country_id');
     }
 
+    public function role()
+    {
+        return $this->hasOne('App\Role', 'id','roles_id');
+    }
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'country_id'
+        'name', 'email', 'password', 'country_id','roles_id'
     ];
 
     /**
