@@ -31,6 +31,7 @@ Route::get('/logout', 'UserController@doLogout');
 Route::get('/api/summary', 'ApiController@showSummary');
 
 Route::get('/web/dashboard', 'DashboardController@index')->name('dashboard');
+Route::get('/web/basic/', 'DashboardController@basic')->name('basic');
 Route::get('/web/forum', 'DashboardController@forum')->name('forum');
 
 Route::get('/web/forum/thread/add', 'ThreadController@show')->name('addthread');
@@ -42,3 +43,5 @@ Route::get('/web/forum/thread/{id}/delete', 'ThreadController@destroy')->name('d
 
 Route::post('/web/forum/thread/{id}/replies/add', 'RepliesController@store')->name('addreplies');
 Route::get('/web/forum/thread/{id}/replies/delete/{rid}', 'RepliesController@destroy')->name('deletereplies');
+
+Route::get('/web/basic/thread/{id}', 'BasicController@index')->name('viewbasic');

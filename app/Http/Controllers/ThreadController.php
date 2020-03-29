@@ -11,6 +11,10 @@ use App\Replies;
 
 class ThreadController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -19,7 +23,7 @@ class ThreadController extends Controller
     public function index(Request $request)
     {
         $user = Auth::user();
-        $thread = Thread::find($request->id);
+        $thread = Thread::findorfail($request->id);
         if($thread->user->id != $user->id){
             $thread->increment('views');
         }
@@ -54,6 +58,7 @@ class ThreadController extends Controller
                                 'subject' => $request->subject,
                                 'thread' => $request->thread,
                                 'views' => 0,
+                                'type' => 'thread',
                                 'user_id' => $user->id
                             ]);
         if($thread->save()){
@@ -84,8 +89,8 @@ class ThreadController extends Controller
     public function edit(Request $request)
     {
         $user = Auth::user();
-        $thread = Thread::find($request->id);
-        if($user->id == $thread->user->id){
+        $thread = Thread::findorfail($request->id);
+        if(($user->id == $thread->user->id)){
             return view('panel.editthread',['user' => $user, 'thread' => $thread, 'type' => 'Thread']);
         }
         return back()->with('danger','delete failed!');
@@ -106,7 +111,7 @@ class ThreadController extends Controller
         ]);
 
         $user = Auth::user();
-        $thread = Thread::find($request->id);
+        $thread = Thread::findorfail($request->id);
 
         if($user->id == $thread->user->id){
             $update = $thread->update([
@@ -130,7 +135,7 @@ class ThreadController extends Controller
     public function destroy(Request $request)
     {
         $user = Auth::user();
-        $thread = Thread::find($request->id);
+        $thread = Thread::findorfail($request->id);
 
         if($user->id == $thread->user->id){
             if($thread->delete()){

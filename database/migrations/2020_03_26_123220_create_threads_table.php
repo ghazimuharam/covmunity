@@ -18,6 +18,7 @@ class CreateThreadsTable extends Migration
             $table->string('subject');
             $table->text('thread');
             $table->integer('views');
+            $table->enum('type', ['thread', 'static']);
             $table->unsignedBigInteger('user_id');
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users');

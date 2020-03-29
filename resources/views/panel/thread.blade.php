@@ -14,7 +14,12 @@
                         <nav aria-label="breadcrumb" class="d-none d-md-inline-block md-4">
                         <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                             <li class="breadcrumb-item"><a href="{{ route('dashboard') }}"><i class="fas fa-home"></i></a></li>
-                            <li class="breadcrumb-item"><a href="{{ route('forum') }}">Forum</a></li>
+                            @if ($thread->type == 'thread')
+                                <li class="breadcrumb-item"><a href="{{ route('forum') }}">Forum</a></li>
+                            @else
+                                <li class="breadcrumb-item"><a href="{{ route('basic') }}">Basic</a></li>
+                            @endif
+
                             <li class="breadcrumb-item"><a href="{{ route('thread',$thread->id) }}">{{ $thread->subject }}</a></li>
                             <li class="breadcrumb-item active" aria-current="page">Default</li>
                         </ol>
@@ -67,6 +72,7 @@
             </div>
         </div>
 
+        @if($thread->type == 'thread')
         <div class="row">
             <div class="col">
                 <div class="card bg-default">
@@ -129,8 +135,8 @@
                                         @endforeach
 
                                     @else
-                                        <div class="row mx-1 align-items-center text-white">
-                                            <h1>No Replies found</h1>
+                                        <div class="row mx-1">
+                                            <h1 class="text-white">No Replies found</h1>
                                         </div>
                                     @endif
                                     <div class="row mt-5">
@@ -153,8 +159,8 @@
                 </div>
             </div>
         </div>
-
-    </div>
+        @endif
+</div>
     <script src="{{ asset('ckeditor/build/ckeditor.js') }}"></script>
 <script>
 

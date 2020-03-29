@@ -20,7 +20,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('dashboard') }}">
+                <a class="nav-link" href="{{ route('basic') }}">
                     <i class="ni ni-single-copy-04 text-primary"></i>
                     <span class="nav-link-text">Basic</span>
                 </a>

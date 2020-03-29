@@ -28,8 +28,15 @@ class DashboardController extends Controller
     public function forum()
     {
         $user = Auth::user();
-        $thread = Thread::get();
+        $thread = Thread::where('type','=','thread')->get();
         return view('panel.forum', ['user' => $user, 'allThreads' => $thread]);
+    }
+
+    public function basic()
+    {
+        $user = Auth::user();
+        $thread = Thread::where('type','=','static')->get();
+        return view('panel.basic', ['user' => $user, 'allThreads' => $thread]);
     }
 
 }
