@@ -1,80 +1,23 @@
-<p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
+#COVMUNITY
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
 
-## About Laravel
+## Inspiration
+	Our inspiration to build covmunity is because lot of people lack of knowledge about Covid-19, there are some people who don't know where to ask about stuff related to Covid-19, so we want to make a place for everybody to give advice/information or answering someone question.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## What it does
+	Covmunity is a website crafted with laravel, this website have a purpose to serve a reliable information from Administrator and an Information/Question provided by user, everyone can ask/replies question in a forum, and everyone can reply to it, there's no limition of the user, EVERYONE can use this forum the same way as everyone else.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## How we built it
+ 	Covmunity is a responsive Web Application, we are using a responsive front-end template provided by Argon-Dashboard, using a php framework named Laravel v6.x for the back-end, and using Mysql for the database. We build a fancy looking website but still maintain the website to be user-friendly for all human being, someone can register to the site by only provided 3 things (Name, Email, Password) and it only takes about 30 seconds to register, then the user can login with email and password their register before. There are a real-time data of Covid-19 around the globe and a line chart of development of Covid-19 day-by-day, there's a profile page to change your nationality and forum for the discussion between user.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Challenges we ran into
+	We ran into so many challenge, since this pandemic is not very well-known, we have to find reliable information related to Covid-19 for providing to our user, we're have some problem with a real-time data because some API Endpoint is not fast update and not provided a specific data as we want, there's a problem too in the deployment because we don't have any resources such as VPS and Domain, instead of not making it only, we host the website in one of our team server and domain.
 
-## Learning Laravel
+## Accomplishments that we're proud of
+	We are proud to be a human who can help each other, there's nothing we can do to have a good impact in this pandemic, so we build a website to provide user a reliable information and to start a discussion related to Covid-19, in the end we are very proud for being participant on this Hackathon because that's what makes us a Human.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## What we learned
+	We learning a lot of new things from a different perspective, we learned about how the front-liners working really hard to take care of the pandemic, we learned to sort a reliable sources, we learned to share an important information, but the most important thing is we learned to be a good human being for helping each other.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- [UserInsights](https://userinsights.com)
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-- [Invoice Ninja](https://www.invoiceninja.com)
-- [iMi digital](https://www.imi-digital.de/)
-- [Earthlink](https://www.earthlink.ro/)
-- [Steadfast Collective](https://steadfastcollective.com/)
-- [We Are The Robots Inc.](https://watr.mx/)
-- [Understand.io](https://www.understand.io/)
-- [Abdel Elrafa](https://abdelelrafa.com)
-- [Hyper Host](https://hyper.host)
-- [Appoly](https://www.appoly.co.uk)
-- [OP.GG](https://op.gg)
-- [云软科技](http://www.yunruan.ltd/)
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-# covmunity
+## What's next for Covmunity
+	Covmunity is still a young website, there's many bugs, there's not much feature and there's something we need to improve, we really wanted to make this website a bunch of feature in order to reduce the impact of Covid-19, we want to make a self diagnosis feature and a mobile application for the user to get a fastest and reliable sources of information, there's a lot of feature coming soon.
