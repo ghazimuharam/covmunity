@@ -109,7 +109,7 @@
                                                 <div class="card col-xl-12 col-md-12 col-xs-8">
                                                     <div class="row mx-1 mt-3">
                                                         <span class="avatar avatar-sm rounded-circle">
-                                                            <img alt="Image placeholder" src="{{ asset('assets/img/theme/team-4.jpg') }}">
+                                                            <img alt="Image placeholder" src="{{ asset('assets/images/logo.png') }}">
                                                         </span>
                                                         <div class="media-body ml-3 mt-2 ">
                                                             <div class="text-capitalize">
