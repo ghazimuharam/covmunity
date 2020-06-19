@@ -17,7 +17,7 @@ var data = JSON.parse(this.response);
             coronaCase[index].textContent = data[index];
             if(index == 3){
                 var deathsRatediv = (parseFloat(data[2])/parseFloat(data[0]));
-                coronaCase[index].textContent = Math.round(deathsRatediv*100)/10 + '%';
+                coronaCase[index].textContent = Math.round(deathsRatediv*10000)/100 + '%';
             }
         }
     } else {
